@@ -1,3 +1,5 @@
+# [Bug #2017399: `apt-get -s upgrade` calculates the upgrade differently depending on whether InRelease files are present in the cache ](https://bugs.launchpad.net/ubuntu/+source/apt/+bug/2017399)
+
 # Background
 I have an in-house package manager that downloads packages from mirrors in parallel and maintains a versioned local repo. It has worked well since 2019. However, during a recent migration from 18.04 to 22.04 I encountered a strange bug: the install step keeps failing because the download step has missed the following packages: xserver-common xserver-xorg-core and xserver-xorg-legacy. It turns out that `apt-get -s`, which the download step uses to figure out the packages that need to be downloaded, produces different results depending on whether InRelease files are present in the cache (as specified in `Dir::State::Lists`). I suspect Phased-Update-Percentage is a related factor.
 
