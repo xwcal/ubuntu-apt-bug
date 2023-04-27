@@ -54,7 +54,7 @@ It shall then extract an integer from a uniform integer distribution between 0 a
 
 To the uninitiated: this is not how a random number generator is meant to be used. If you want a repeatable sequence of random numbers, you seed the RNG once and then draw the desired number of samples. You don't reseed the RNG for each new sample, since if your seeds are already random, then the RNG step is pointless, whereas if your seeds aren't random, say, in an extreme case, if you always seed with the same number, your "random" number is guaranteed to be the same each time.
 
-To achieve repeatable randomness with respect to both the package and machine, there is an obviously superior choice in terms of both randomness and portability: **just use a crypographic hash like sha256**.
+To achieve repeatable randomness with respect to both the package and machine, there is an obviously superior choice in terms of both randomness and portability: **just use a cryptographic hash function like sha256**.
 
 This begs the question of how repeatable the design really is.
 To quote [https://wiki.debian.org/MachineId](https://wiki.debian.org/MachineId):
