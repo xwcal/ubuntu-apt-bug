@@ -68,11 +68,11 @@ what is the machine id actually used for?
 That's to say, although for repeatable experiments it's foreseeably necessary to mess with the machine ID or share it publicly,
 the consequences of such tinkering or disclosure are hard to assess, since nobody knows for sure how and where the machine ID is and will be used.
 
-This leads to an easily conceivable alternative: since apt only uses the machine ID for the purpose repeatable randomization, how about using another user configurable value, say `/etc/apt/phased-update-random-seed`, that is only used for this particular purpose and by default initialized to the machine ID?
+This leads to an easily conceivable alternative: since apt only uses the machine ID for the purpose of repeatable randomization, how about designating another user configurable value stored in, say `/etc/apt/phased-update-random-seed`, only for this particular purpose and by default initialized to the machine ID?
 
 ## User Choice
 
-From [this response](https://bugs.launchpad.net/ubuntu/+source/apt/+bug/2017399/comments/1) to my bug report (one question I forgot to ask is why phase security updates at all) and a [comment](https://askubuntu.com/questions/1431940/what-are-phased-updates-and-why-does-ubuntu-use-them) on askubuntu that doesn't cite any source, it does appear that consideration has been given regarding the need to treat different packages (at least different classes of packages) differently when it comes to phasing. 
+From [this response](https://bugs.launchpad.net/ubuntu/+source/apt/+bug/2017399/comments/1) to my bug report (one question I forgot to ask is why phase security updates at all) and a comment on [askubuntu](https://askubuntu.com/questions/1431940/what-are-phased-updates-and-why-does-ubuntu-use-them) that doesn't cite any source, it does appear that consideration has been given regarding the need to treat different packages (at least different classes of packages) differently when it comes to phasing. 
 
 It's conceivable that a user may have preferences over how each particular package is phased. For example, if a GUI component has a troubled history with my Nvidia graphics, I may prefer to be highly conservative and wait until the last minute, but this shouldn't prevent me from being adventurous when it comes to other phased packages.
 
